@@ -138,6 +138,7 @@ class Home extends React.Component {
             console.log(
               `New campaign created with address - ${campaignFactory}`
             )
+            this.reRender()
           })
       } else {
         console.log('Enter minimum funding amount greater than 0')
@@ -147,12 +148,17 @@ class Home extends React.Component {
     }
   }
 
+  reRender = () => {
+    console.log('Reload started')
+    window.location.reload()
+    console.log('Reload completed')
+  }
   render() {
     return (
       <React.Fragment>
         <Navbar accountAddress={this.state.account} />
         <Modal createNewCampaignHandler={this.createNewCampaignHandler} />
-        <div className="container">
+        <div className="container" style={{marginTop: '5rem'}}>
           <div className="row">
             <div className="col">
               <CampaignFactoryTitle

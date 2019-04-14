@@ -220,7 +220,7 @@ class CampaignDetails extends React.Component {
     return (
       <React.Fragment>
         <Navbar accountAddress={web3.eth.accounts.toString()} />
-        <div className="container">
+        <div className="container" style={{marginTop: '5rem'}}>
           <div className="row">
             <div className="col-12">
               <div className="card mb-3">
