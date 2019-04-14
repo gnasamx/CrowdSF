@@ -9,10 +9,13 @@ const CreateRequestForm = props => {
         </label>
         <div className="col-sm-10">
           <input
+            name="requestPurpose"
             type="text"
             className="form-control"
             id="inputEmail3"
             placeholder="Eg. Buy new tool"
+            onChange={props.requestChangeHandler}
+            value={props.requestPurpose}
           />
         </div>
       </div>
@@ -26,12 +29,13 @@ const CreateRequestForm = props => {
           </div>
           <input
             type="text"
+            name="requestEthAmt"
             className="form-control"
             id="ContributionFieldId"
             aria-describedby="Help"
             placeholder="Enter amount"
-            onChange={props.onContributionChangeHandler}
-            value={props.contributionAmtInputValue}
+            onChange={props.requestChangeHandler}
+            value={props.requestEthAmt}
           />
         </div>
       </div>
@@ -41,16 +45,22 @@ const CreateRequestForm = props => {
         </label>
         <div className="col-sm-10">
           <input
+            name="requestWorkerAdd"
             type="text"
             className="form-control"
             id="inputPassword4"
             placeholder="Address"
+            onChange={props.requestChangeHandler}
+            value={props.requestWorkerAdd}
           />
         </div>
       </div>
       <div className="form-group row">
         <div className="col-sm-10">
-          <button type="submit" className="btn btn-primary">
+          <button
+            onClick={props.createNewRequestHandler}
+            className="btn btn-primary"
+          >
             Create Request
           </button>
         </div>

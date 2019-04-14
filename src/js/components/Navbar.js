@@ -8,7 +8,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-3">
         <Link className="navbar-brand" to="/">
           CrowdSF
         </Link>
@@ -51,7 +51,7 @@ class Navbar extends React.Component {
                 type="submit"
               >
                 {/* {this.props.accountAddress.slice(0, 5) + '...'} */}
-                {this.props.accountAddress}{' '}
+                {this.props.accountAddress}
               </button>
             )}
           </div>

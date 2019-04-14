@@ -56,6 +56,7 @@ class SingleCampaign extends React.Component {
         console.log(`Summary: ${summary}`)
       })
 
+      // New request
       // campaignInstance.createRequest(
       //   'New tool',
       //   2,
@@ -67,6 +68,11 @@ class SingleCampaign extends React.Component {
       //   }
       // ),
       //   then(o => console.log(`Created request => ${o}`))
+
+      //Get all request
+      // campaignInstance
+      //   .getRequests(0)
+      //   .then(ar => console.log('All requests: ', ar))
 
       // Get request count
       // campaignInstance

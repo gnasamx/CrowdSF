@@ -14,6 +14,7 @@ contract Campaign {
     address public manager;
     uint public minimumContribution;
     mapping(address => bool) public approvers;
+    address[] public contributersAddArr;
     uint public approversCount;
     string campaignTitle;
     string public campaignDescription;
@@ -35,6 +36,7 @@ contract Campaign {
 
         approvers[msg.sender] = true;
         approversCount++;
+        contributersAddArr.push(msg.sender);
     }
 
     function createRequest(string memory description, uint value, address payable recipient) public restricted {
@@ -66,6 +68,7 @@ contract Campaign {
         require(!request.complete);
 
         request.recipient.transfer(request.value);
+        (request.value);
         request.complete = true;
     }
 
@@ -83,7 +86,24 @@ contract Campaign {
         );
     }
 
+    function getContributers() public view returns(address[] memory) {
+        return contributersAddArr;
+    }
+
     function getRequestsCount() public view returns (uint) {
         return requests.length;
     }
+
+    function getRequests(uint index) public view returns (string memory, uint, address, bool, uint ) {
+        Request storage request = requests[index];
+
+        return (
+            request.description,
+            request.value,
+            request.recipient,
+            request.complete,
+            request.approvalCount
+        );
+    }
+
 }

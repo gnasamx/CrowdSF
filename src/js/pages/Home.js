@@ -136,7 +136,7 @@ class Home extends React.Component {
           })
           .then(campaignFactory => {
             console.log(
-              `New campaign created with address - ${campaignFactory.address}`
+              `New campaign created with address - ${campaignFactory}`
             )
           })
       } else {
