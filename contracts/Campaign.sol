@@ -23,9 +23,9 @@ contract Campaign {
         _;
     }
 
-    constructor(string memory campaignTitle,  string memory campaignDescription, uint minimum, address creator) public {
-        campaignTitle = campaignTitle;
-        campaignDescription = campaignDescription;
+    constructor(string memory _campaignTitle,  string memory _campaignDescription, uint minimum, address creator) public {
+        campaignTitle = _campaignTitle;
+        campaignDescription = _campaignDescription;
         manager = creator;
         minimumContribution = minimum;
     }

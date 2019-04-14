@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -8,9 +9,9 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="/">
           CrowdSF
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -26,26 +27,34 @@ class Navbar extends React.Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="#">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="#">
                 Link
-              </a>
+              </Link>
             </li>
           </ul>
-          <button className="btn btn-success my-2 my-sm-0" data-toggle="modal" data-target="#exampleModal">
+          <button
+            className="btn btn-success my-2 my-sm-0"
+            data-toggle="modal"
+            data-target="#exampleModal"
+          >
             Create Campaign
           </button>
-          <button
-            className="btn btn-outline-warning ml-2 my-sm-0"
-            type="submit"
-          >
-            {/* {this.props.accountAddress.slice(0, 5) + '...'} */}
-            {this.props.accountAddress}{' '}
-          </button>
+          <div>
+            {this.props.accountAddress && (
+              <button
+                className="btn btn-outline-warning ml-2 my-sm-0"
+                type="submit"
+              >
+                {/* {this.props.accountAddress.slice(0, 5) + '...'} */}
+                {this.props.accountAddress}{' '}
+              </button>
+            )}
+          </div>
         </div>
       </nav>
     )
